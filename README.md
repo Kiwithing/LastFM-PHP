@@ -29,16 +29,17 @@ $lastfm = new LastFM(array(
 **Parameters:**
 
 - Limit
-  - Integer.  Amount of songs to grab.
+  - Integer. (Default = 5)  Amount of songs to grab.
 
 **Requirements:**
 
 - Options
   - USER
 
-Example:
+**Example:**
 ```php
 foreach($lastfm->getSongs(5) as $song) {
 	echo $song['NAME'] . ' by ' . $song['ARTIST'] . '<br>';
 }
 ```
+---
