@@ -5,7 +5,7 @@ class LastFM {
 	public $url;
 	public $USER;
 
-	public function __construct($options) {
+	public function __construct(array $options) {
 		foreach($options as $option => $value) {
 			switch($option) {
 				case 'USER':
@@ -32,7 +32,7 @@ class LastFM {
 		return $source;
 	}
 
-	public function getSongs($limit = 5) {
+	public function getSongs(int $limit = 5) {
 		$xml = simplexml_load_string($this->getSource($this->url . 'user/' . $this->USER . '/recenttracks?limit=' . $limit));
 
 		foreach($xml->track as $track) {
