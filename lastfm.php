@@ -1,7 +1,7 @@
 <?php
 
 class LastFM {
-	private $_apikey;
+	private $_APIKEY;
 	public $url;
 	public $USER;
 
@@ -12,7 +12,7 @@ class LastFM {
 					$this->USER = $value;
 					break;
 				case 'APIKEY':
-					$this->_apikey = $value;
+					$this->_APIKEY = $value;
 			}
 		}
 
