@@ -5,7 +5,7 @@ LastFM-PHP
 
 ## How to Use ##
 
-You must require the class inside of your PHP file.
+You must require the class inside of your PHP file.  The class can be found here: (https://github.com/Crucider/LastFM-PHP/blob/master/lastfm.php)[https://github.com/Crucider/LastFM-PHP/blob/master/lastfm.php]
 ```php
 require 'lastfm.php';
 ```
