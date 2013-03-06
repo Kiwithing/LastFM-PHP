@@ -3,14 +3,19 @@ LastFM-PHP
 ###### LastFM PHP is an easier way for developers to access the LastFM API.  By Crucider ######
 --
 
-#### Functions: ####
-getSongs() - Grabs recently played songs
---
-Parameters
-	+ Required Options
-		- USER
-	+ Limit
-		- The amount to grab
+## Functions: ##
+
+### getSongs() - Grabs recently played songs ###
+**Parameters:**
+
+- Limit
+  - Integer.  Amount of songs to grab.
+
+**Requirements:**
+
+- Options
+  - USER
+
 ```php
 require 'lastfm.php';
 $lastfm = new LastFM(array(
