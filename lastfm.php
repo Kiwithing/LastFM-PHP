@@ -4,7 +4,7 @@ class LastFM {
 	private $_APIKEY;
 	public $USER;
 
-	public $url;
+	const API_URL = 'http://ws.audioscrobbler.com/2.0/';
 
 	public function __construct(array $options) {
 		foreach($options as $option => $value) {
@@ -16,8 +16,6 @@ class LastFM {
 					$this->_APIKEY = $value;
 			}
 		}
-
-		$this->url = 'http://ws.audioscrobbler.com/2.0/';
 	}
 
 	private function getSource($url) {
@@ -34,7 +32,7 @@ class LastFM {
 	}
 
 	public function getSongs($limit = 5) {
-		$xml = simplexml_load_string($this->getSource($this->url . 'user/' . $this->USER . '/recenttracks?limit=' . $limit));
+		$xml = simplexml_load_string($this->getSource(self::API_URL . 'user/' . $this->USER . '/recenttracks?limit=' . $limit));
 
 		foreach($xml->track as $track) {
 			$stuff[] = array(
@@ -54,7 +52,7 @@ class LastFM {
 			$attribute .= '&' . $type . '=' . rawurlencode($value);
 		}
 
-		$xml = simplexml_load_string($this->getSource($this->url . '?method=' . $method . $attribute . '&api_key=' . $this->_APIKEY));
+		$xml = simplexml_load_string($this->getSource(self::API_URL . '?method=' . $method . $attribute . '&api_key=' . $this->_APIKEY));
 		return $xml;
 	}
 }
