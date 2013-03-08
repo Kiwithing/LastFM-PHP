@@ -55,8 +55,6 @@ foreach($lastfm->getSongs(5) as $song) {
 
 - Options
   - APIKEY
-
-
 - Parameters
   - Method
   - Parameters
