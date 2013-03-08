@@ -9,5 +9,12 @@ $lastfm = new LastFM(array(
 foreach($lastfm->getSongs(5) as $song) {
 	echo $song['NAME'] . ' by ' . $song['ARTIST'] . '<br>';
 }
+
+echo '<br><pre>';
+
+print_r($lastfm->getCustom('album.getinfo', array(
+	'artist' => 'Beast',
+	'album' => 'Fiction And Fact'
+)));
 $lastfm = null;
 ?>

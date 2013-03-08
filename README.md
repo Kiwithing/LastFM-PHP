@@ -43,3 +43,27 @@ foreach($lastfm->getSongs(5) as $song) {
 }
 ```
 ---
+### getCustom() - Access the other API's that aren't available yet ###
+**Parameters:**
+
+- Method
+  - String. The API method to use that can be found here: [http://www.last.fm/api](http://www.last.fm/api)
+- Parameters
+  - Array. The parameters to use that can be found on the method page.  _Example_: [http://www.last.fm/api/show/album.getInfo](http://www.last.fm/api/show/album.getInfo)
+
+**Requirements:**
+
+- Options
+  - APIKEY
+
+- Parameters
+  - Method
+  - Parameters
+
+**Example:**
+```php
+$lastfm->getCustom('album.getinfo', array(
+	'artist' => 'Beast',
+	'album' => 'Fiction And Fact'
+));
+```

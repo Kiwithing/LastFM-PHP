@@ -2,8 +2,9 @@
 
 class LastFM {
 	private $_APIKEY;
-	public $url;
 	public $USER;
+
+	public $url;
 
 	public function __construct(array $options) {
 		foreach($options as $option => $value) {
@@ -32,7 +33,7 @@ class LastFM {
 		return $source;
 	}
 
-	public function getSongs(int $limit = 5) {
+	public function getSongs($limit = 5) {
 		$xml = simplexml_load_string($this->getSource($this->url . 'user/' . $this->USER . '/recenttracks?limit=' . $limit));
 
 		foreach($xml->track as $track) {
@@ -45,5 +46,15 @@ class LastFM {
 		}
 
 		return $stuff;
+	}
+
+	public function getCustom($method, $params, $limit = 5) {
+		$attribute = null;
+		foreach($params as $type => $value) {
+			$attribute .= '&' . $type . '=' . rawurlencode($value);
+		}
+
+		$xml = simplexml_load_string($this->getSource($this->url . '?method=' . $method . $attribute . '&api_key=' . $this->_APIKEY));
+		return $xml;
 	}
 }
