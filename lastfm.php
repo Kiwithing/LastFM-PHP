@@ -48,7 +48,7 @@ class LastFM {
 		return $stuff;
 	}
 
-	public function getCustom($method, $params, $limit = 5) {
+	public function getCustom($method, $params) {
 		$attribute = null;
 		foreach($params as $type => $value) {
 			$attribute .= '&' . $type . '=' . rawurlencode($value);
