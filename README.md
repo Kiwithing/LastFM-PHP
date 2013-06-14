@@ -1,6 +1,6 @@
 LastFM-PHP
 ===========
-###### LastFM PHP is an easier way for developers to access the LastFM API.  Forked from [https://github.com/Crucider/LastFM-PHP](Crucider aka Incorporate)  ######
+###### LastFM PHP is an easier way for developers to access the LastFM API.  Forked from [https://github.com/Crucider/LastFM-PHP](https://github.com/Crucider/LastFM-PHP)  ######
 ---
 
 ## How to Use ##
