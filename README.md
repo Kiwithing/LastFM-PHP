@@ -1,11 +1,11 @@
 LastFM-PHP
 ===========
-###### LastFM PHP is an easier way for developers to access the LastFM API.  By Crucider aka Incorporate ######
+###### LastFM PHP is an easier way for developers to access the LastFM API.  Forked from [https://github.com/Crucider/LastFM-PHP](Crucider aka Incorporate)  ######
 ---
 
 ## How to Use ##
 
-You must require the class inside of your PHP file.  The class can be found here: [https://github.com/Crucider/LastFM-PHP/blob/master/lastfm.php](https://github.com/Crucider/LastFM-PHP/blob/master/lastfm.php)
+You must require the class inside of your PHP file.  The class can be found here: [https://github.com/Kiwithing/LastFM-PHP/blob/master/lastfm.php](https://github.com/Kiwithing/LastFM-PHP/blob/master/lastfm.php)
 ```php
 require 'lastfm.php';
 ```
