@@ -38,13 +38,42 @@ class LastFM {
 			$stuff[] = array(
 				'URL' => $track->url[0],
 				'ARTIST' => $track->artist[0],
+                'ALBUM' => $track->album,
 				'NAME' => $track->name[0],
-				'DATEPLAYED' => $track->date[0]
+				'DATEPLAYED' => $track->date[0],
+                'IMAGE' => array(
+                    'LARGE' => $track->image[3],
+                    'MEDIUM' => $track->image[2],
+                    'SMALL' => $track->image[1],
+                    'TINY' => $track->image[0],
+                ),
 			);
 		}
 
 		return $stuff;
 	}
+    
+        public function getLovedSongs($limit = 5) {
+        $xml = simplexml_load_string($this->getSource(self::API_URL . 'user/' . $this->USER . '/lovedtracks?limit=' . $limit));
+
+        foreach ($xml->track as $track) {
+            $stuff[] = array(
+                'URL' => $track->url[0],
+                'ARTIST' => $track->artist[0],
+                'ALBUM' => $track->album,
+                'NAME' => $track->name[0],
+                'DATEPLAYED' => $track->date[0],
+                'IMAGE' => array(
+                    'LARGE' => $track->image[3],
+                    'MEDIUM' => $track->image[2],
+                    'SMALL' => $track->image[1],
+                    'TINY' => $track->image[0],
+                ),
+            );
+        }
+
+        return $stuff;
+    }
 
 	public function getCustom($method, $params) {
 		$attribute = null;
